@@ -1,0 +1,14 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Projects</title>
+</head>
+<body>
+    <h1>Birdboard</h1>
+    <ul>
+        @foreach ($projects as $project)
+            <li>{{ $project->title }}</li>
+        @endforeach
+    </ul>
+</body>
+</html>
