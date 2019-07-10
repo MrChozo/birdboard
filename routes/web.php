@@ -15,14 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/projects', function () {
-    $projects = App\Project::all();
-    return view('projects.index', compact('projects'));
-});
-
-Route::post('/projects', function () {
-    // Validate
-    // Persist
-    App\Project::create(request(['title', 'description']));
-    // Redirect
-});
+Route::get('/projects', 'ProjectsController@index');
+Route::post('/projects', 'ProjectsController@store');
