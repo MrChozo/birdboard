@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/projects', function () {
+    // Validate
+    // Persist
+    App\Project::create(request(['title', 'description']));
+    // Redirect
+});
