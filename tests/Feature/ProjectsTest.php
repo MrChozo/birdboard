@@ -16,11 +16,24 @@ class ProjectsTest extends TestCase
         $this->withoutExceptionHandling();
 
         $attributes = [
+            'n' => 9,
+            'ar' => [10, 20, 20, 10, 10, 30, 50, 10, 20]
+        ];
+
+        $this->post('/foo', $attributes)->assertHeader('foo', 3);
+    }
+
+    /** @test */
+    public function a_sock_merchant_test_2()
+    {
+        $this->withoutExceptionHandling();
+
+        $attributes = [
             'n' => 15,
             'ar' => [6, 5, 2, 3, 5, 2, 2, 1, 1, 5, 1, 3, 3, 3, 5]
         ];
 
-        $this->get('/foo', $attributes)->assertHeader('foo', 6);
+        $this->post('/foo', $attributes)->assertHeader('foo', 6);
     }
 
     /** @test */

@@ -19,4 +19,4 @@ Route::get('/projects', 'ProjectsController@index');
 Route::get('/projects/{project}', 'ProjectsController@show');
 Route::post('/projects', 'ProjectsController@store');
 
-Route::get('/foo', 'ProjectsController@sockMerchant');
+Route::post('/foo', 'ProjectsController@sockMerchant');
