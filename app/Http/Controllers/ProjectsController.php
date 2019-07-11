@@ -15,14 +15,14 @@ class ProjectsController extends Controller
 
     public function store()
     {
-        // Validate
+        // good example of "Validate, Persist, & Redirect" from Laracasts
         $attributes = request()->validate([
             'title' => 'required',
             'description' => 'required'
         ]);
-        // Persist
+
         Project::create($attributes);
-        // Redirect
+
         return redirect('/projects');
     }
 }
