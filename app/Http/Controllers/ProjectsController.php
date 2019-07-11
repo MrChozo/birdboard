@@ -14,15 +14,16 @@ class ProjectsController extends Controller
 
         define("PAIR", 2);
         $pairs = 0;
-        for ($i = 0; $i < $n; $i++) {
+        for ($i = 0; $i < count($ar); $i++) {
             $color = array_keys($ar, $ar[$i]);
 
-            $matches = floor(count($color) / PAIR);
             $pairs += floor(count($color) / PAIR);
 
-            echo "matches: $matches\n";
-            echo "pairs: $pairs\n";
+            foreach ($color as $c) {
+                unset($ar[$c]);
+            }
         }
+
         return response('socks for sale', 200)
             ->header('foo', $pairs);
     }
