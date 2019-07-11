@@ -11,6 +11,19 @@ class ProjectsTest extends TestCase
     use WithFaker, RefreshDatabase;
 
     /** @test */
+    public function a_sock_merchant_test_1()
+    {
+        $this->withoutExceptionHandling();
+
+        $attributes = [
+            'n' => 15,
+            'ar' => [6, 5, 2, 3, 5, 2, 2, 1, 1, 5, 1, 3, 3, 3, 5]
+        ];
+
+        $this->get('/foo', $attributes)->assertHeader('foo', 6);
+    }
+
+    /** @test */
     public function a_user_can_create_a_project()
     {
         $this->withoutExceptionHandling();
