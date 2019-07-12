@@ -6,7 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class SockMerchantTest extends TestCase
+class SockMerchantsTest extends TestCase
 {
     /** @test */
     public function case_1()
@@ -18,7 +18,7 @@ class SockMerchantTest extends TestCase
             'ar' => [10, 20, 20, 10, 10, 30, 50, 10, 20]
         ];
 
-        $this->post('/foo', $attributes)->assertHeader('foo', 3);
+        $this->post('/sockmerchants', $attributes)->assertHeader('foo', 3);
     }
 
     /** @test */
@@ -31,7 +31,7 @@ class SockMerchantTest extends TestCase
             'ar' => [6, 5, 2, 3, 5, 2, 2, 1, 1, 5, 1, 3, 3, 3, 5]
         ];
 
-        $this->post('/foo', $attributes)->assertHeader('foo', 6);
+        $this->post('/sockmerchants', $attributes)->assertHeader('foo', 6);
     }
 
     /** @test */
@@ -44,7 +44,7 @@ class SockMerchantTest extends TestCase
             'ar' => [6, 5, 2, 3, 5, 2, 99, 1, 53, 5, 1, 9, 3, 3, 0, 8, 8, 8, 8]
         ];
 
-        $this->post('/foo', $attributes)->assertHeader('foo', 6);
+        $this->post('/sockmerchants', $attributes)->assertHeader('foo', 6);
     }
 
     /** @test */
@@ -57,6 +57,6 @@ class SockMerchantTest extends TestCase
             'ar' => [0, 2, 3, 1]
         ];
 
-        $this->post('/foo', $attributes)->assertHeader('foo', 0);
+        $this->post('/sockmerchants', $attributes)->assertHeader('foo', 0);
     }
 }
