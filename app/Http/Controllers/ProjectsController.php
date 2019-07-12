@@ -12,12 +12,12 @@ class ProjectsController extends Controller
         $n = request('n');
         $ar = request('ar');
 
-        define("PAIR", 2);
+        $pair = 2;
         $pairs = 0;
         for ($i = 0; $i < count($ar); $i++) {
             $color = array_keys($ar, $ar[$i]);
 
-            $pairs += floor(count($color) / PAIR);
+            $pairs += floor(count($color) / $pair);
 
             foreach ($color as $c) {
                 unset($ar[$c]);
