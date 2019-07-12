@@ -13,11 +13,15 @@ class ProjectsController extends Controller
         $ar = request('ar');
 
         $pair = 2;
-        $pairs = 0;
+
+        $total_pairs = 0;
         for ($i = 0; $i < count($ar); $i++) {
             $color = array_keys($ar, $ar[$i]);
+            $count = count($color);
+            $remainder = $count % $pair;
+            $matches = ($count - $remainder) / $pair;
 
-            $pairs += floor(count($color) / $pair);
+            $total_pairs += $matches;
 
             foreach ($color as $c) {
                 unset($ar[$c]);
@@ -25,7 +29,7 @@ class ProjectsController extends Controller
         }
 
         return response('socks for sale', 200)
-            ->header('foo', $pairs);
+            ->header('foo', $total_pairs);
     }
 
     public function index()
