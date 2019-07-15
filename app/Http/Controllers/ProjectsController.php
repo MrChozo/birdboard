@@ -23,7 +23,8 @@ class ProjectsController extends Controller
         // good example of "Validate, Persist, & Redirect" from Laracasts
         $attributes = request()->validate([
             'title' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'owner_id' => 'required'
         ]);
 
         Project::create($attributes);
