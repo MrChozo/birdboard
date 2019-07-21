@@ -31,7 +31,7 @@ class ProjectsTest extends TestCase
     }
 
     /** @test */
-    public function a_user_can_create_a_project()
+    public function an_authenticated_user_can_create_a_project()
     {
         $this->withoutExceptionHandling();
 
@@ -49,7 +49,17 @@ class ProjectsTest extends TestCase
     }
 
     /** @test */
-    public function a_user_can_view_their_project()
+    public function an_authenticated_user_cannot_view_the_projects_of_others()
+    {
+        $this->actingAs(factory('App\User')->create());
+
+        $project = factory('App\Project')->create();
+
+        $this->get($project->path())->assertStatus(403);
+    }
+
+    /** @test */
+    public function an_authenticated_user_can_view_their_project()
     {
         $this->withoutExceptionHandling();
 
