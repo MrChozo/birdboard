@@ -1,10 +1,7 @@
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>Project</title>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('content')
     <h1>{{ $project->title }}</h1>
     <div>{{ $project->description }}</div>
-</body>
-</html>
+    <div><a href="/projects">Go Back</a></div>
+@endsection

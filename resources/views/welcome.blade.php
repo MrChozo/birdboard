@@ -81,7 +81,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Birdboard
+                </div>
+
+                <div class="links m-b-md">
+                    <a href="/projects">Projects</a>
                 </div>
 
                 <div class="links">

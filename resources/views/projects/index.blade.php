@@ -1,10 +1,10 @@
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>Projects</title>
-</head>
-<body>
-    <h1>Birdboard</h1>
+@extends('layouts.app')
+
+@section('content')
+    <div class="something" style="display: flex; align-items: center;">
+        <h1 style="margin-right: auto;">Birdboard</h1>
+        <a href="/projects/create">Create new Project</a>
+    </div>
     <ul>
         @forelse ($projects as $project)
             <li>
@@ -14,5 +14,4 @@
             <li>No projects yet.</li>
         @endforelse
     </ul>
-</body>
-</html>
+@endsection
