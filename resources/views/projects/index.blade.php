@@ -3,9 +3,9 @@
 @section('content')
     <header class="flex items-center mb-3 py-4">
         <div class="flex justify-between items-center w-full">
-            <h2>My Projects</h2>
+            <h2 class="text-grey text-sm font-normal">My Projects</h2>
 
-            <a href="/projects/create" class="text-grey no-underline">Add Project</a>
+            <a href="/projects/create" class="button">Add Project</a>
         </div>
     </header>
 

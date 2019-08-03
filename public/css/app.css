@@ -572,6 +572,10 @@ table {
  * @import "components/forms";
  */
 
+.button {
+  background-color: #3490dc;
+}
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.
